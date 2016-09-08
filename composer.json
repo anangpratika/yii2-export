@@ -2,7 +2,8 @@
     "name": "anangpratika/yii2-export",
     "description": "Export your data using dataProvider just like gridView with widgets",
     "type": "yii2-extension",
-    "keywords": ["yii2","extension"],
+    "keywords": ["yii2","extension","widget","export","pdf","xls","csv","html"],
+    "homepage": "https://github.com/anangpratika/yii2-export",
     "license": "GPL-3.0+",
     "authors": [
         {
@@ -16,6 +17,11 @@
     "autoload": {
         "psr-4": {
             "anangpratika\\export\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
         }
     }
 }
