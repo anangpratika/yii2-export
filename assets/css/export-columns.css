@@ -1,0 +1,33 @@
+/*!
+ * @package   yii2-export
+ * @author    Anang Pratika <anang.pratika@gmail.com>
+ * @copyright Copyright &copy; Anang Pratika, 2016
+ * @version   1.0.0
+ *
+ * Export Columns Selector Style Sheet
+ *
+ * Author: Anang Pratika
+ * Copyright: 2016, Anang Pratika
+ */
+.an-checkbox-list .checkbox {
+    padding: 0 20px;
+}
+
+.an-checkbox-list label {
+    width: 100%;
+}
+
+.an-checkbox-list label.disabled {
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    opacity: .65;
+}
+
+.an-toggle-all {
+    font-style: italic;
+    color: #337ab7;
+}
+
+.an-toggle-all:hover {
+    color: #286090;
+}

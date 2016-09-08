@@ -1,0 +1,16 @@
+/*!
+ * @package   yii2-export
+ * @author    Anang Pratika <anang.pratika@gmail.com>
+ * @copyright Copyright &copy; Anang Pratika, 2016
+ * @version   1.0.0
+ *
+ * Export Menu Style Sheet
+ *
+ * Author: Anang Pratika
+ * Copyright: 2016, Anang Pratika
+ */
+ .an-export-full-form {
+    margin:0;
+    padding: 0;
+    display: none;
+}
