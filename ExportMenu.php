@@ -35,7 +35,7 @@ use yii\grid\GridView;
  * dataProvider - with configuration very similar to a GridView.
  *
  * @author Anang Pratika <anang.pratika@gmail.com>
- * @since  1.0
+ * @since  1.1.0
  */
 class ExportMenu extends GridView
 {
@@ -245,6 +245,12 @@ class ExportMenu extends GridView
      *     PHPExcel.
      */
     public $styleOptions = [];
+
+    /**
+     * @var array the output style configuration options for items. It must be the style configuration array as required by
+     *     PHPExcel.
+     */
+    public $itemStyleOptions = [];
 
     /**
      * @var bool whether to auto-size the excel output column widths. Defaults to `true`.
@@ -1192,6 +1198,7 @@ class ExportMenu extends GridView
         $colFirst = self::columnName(1);
         if (!empty($this->caption)) {
             $sheet->setCellValue($colFirst . $this->_beginRow, $this->caption, true);
+
             $this->_beginRow += 2;
         }
         $this->_endCol = 0;
@@ -1361,6 +1368,7 @@ class ExportMenu extends GridView
         /**
          * @var Column $column
          */
+        $style = ArrayHelper::getValue($this->itemStyleOptions, $this->_exportType, []);
         $this->_endCol = 0;
         foreach ($this->getVisibleColumns() as $column) {
             if ($column instanceof SerialColumn) {
@@ -1383,6 +1391,10 @@ class ExportMenu extends GridView
                 empty($value) ? '' : strip_tags($value),
                 true
             );
+
+            //Set Style
+            $this->_objPHPExcelSheet->getStyle(self::columnName($this->_endCol ) . ($index + $this->_beginRow +1 ))->applyFromArray($style);
+
             $this->raiseEvent('onRenderDataCell', [$cell, $value, $model, $key, $index, $this]);
         }
     }
