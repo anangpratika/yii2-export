@@ -431,7 +431,7 @@ class ExportMenu extends GridView
     /**
      * @var string the alias for the pdf library path to export to PDF
      */
-    public $pdfLibraryPath = '@vendor/anangpratika/yii2-export/mpdf60';
+    public $pdfLibraryPath = '@vendor/mpdf/mpdf';
 
     /**
      * @var array the internalization configuration for this widget
